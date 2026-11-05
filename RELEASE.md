@@ -1,12 +1,7 @@
 # Releasing
 
-Releases are manual: CI runs the tests and lint, but does not version, build or publish
-this package. A released version cannot be replaced on PyPI, so check each step before
+Releases are manual: nothing automated versions, builds or publishes this package. A released version cannot be replaced on PyPI, so check each step before
 uploading.
-
-> [!NOTE]
-> This needs to be updated for a standalone Github repository. Except for the version
-> tagging the instructions still refer to the monorepo Gitlab configuration.
 
 ## 1. Prepare
 
@@ -19,11 +14,13 @@ uploading.
 
 ## 2. Check
 
-From the `sawemapi` directory, in the dev container (`dev-packagedev-1`):
+From the repository root, in a virtual environment with the package installed in editable
+mode along with `pytest` and `pylint`:
 
 ```
-eskmanage test unit
-eskmanage lint
+pip install -e ".[pandas]" pytest pylint
+python -m pytest src/sawemapi/tests
+pylint --rcfile conf/pylintrc src/sawemapi
 ```
 
 Both must pass. Then test against a real API instance, since the unit tests use mocked
@@ -31,14 +28,16 @@ responses only.
 
 ## 3. Commit and tag
 
-Commit the version and changelog, merge to `main`, and tag the merge commit:
+Commit the version and changelog, merge to `main` (via pull request if you work on a
+branch), and tag the resulting commit on `main`:
 
 ```
 git tag vX.Y.Z
-git push <remote> vX.Y.Z
+git push origin vX.Y.Z
 ```
 
-Nothing in CI reads the tag; it records which commit was released.
+The tag records which commit was released. Optionally, create a GitHub release from it
+(`gh release create vX.Y.Z --notes-from-tag` or via the web UI) using the changelog entry.
 
 ## 4. Build
 
@@ -46,7 +45,8 @@ Build from the tagged commit, with no uncommitted changes:
 
 ```
 rm -rf dist build src/*.egg-info
-eskmanage build
+pip install build
+python -m build
 ```
 
 Check that `dist/` holds exactly one wheel and one sdist, both for the new version, and
@@ -58,8 +58,7 @@ unzip -l dist/*.whl
 
 ## 5. Upload
 
-The build servers have no internet access, so upload from a machine that has. Use a
-virtual environment with `twine`, and a PyPI API token (username `__token__`).
+Use a virtual environment with `twine`, and a PyPI API token (username `__token__`).
 
 ```
 twine check dist/*
