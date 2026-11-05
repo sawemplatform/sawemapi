@@ -6,7 +6,7 @@ name = "sawemapi"
 dynamic = ["version"]
 description = "Client for the SAWEM API"
 authors = [
-    { name="SAWEM Platform Team", email="sawemplateform@ntcsa.co.za" },
+    { name="SAWEM Platform Team", email="sawemplatform@ntcsa.co.za" },
 ]
 readme = "README.md"
 requires-python = ">=3.11"
