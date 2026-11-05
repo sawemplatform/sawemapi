@@ -1,0 +1,40 @@
+[MAIN]
+
+# Python code to execute, usually for sys.path manipulation such as
+# pygtk.require().
+init-hook=""
+
+# Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
+# number of processors available to use.
+jobs=4
+
+# Discover python modules and packages in the file system subtree.
+recursive=yes
+
+
+
+[REPORTS]
+
+
+# Set the output format. Available formats are text, parseable, colorized, json
+# and msvs (visual studio). You can also give a reporter class, e.g.
+# mypackage.mymodule.MyReporterClass.
+output-format=json:output/pylint.json,text:output/pylint.out
+
+
+[IMPORTS]
+
+# Force import order to recognize a module as part of the standard
+# compatibility libraries.
+known-standard-library=
+
+# Force import order to recognize a module as part of a third party library.
+known-third-party=enchant
+
+
+[DESIGN]
+
+# List of regular expressions of class ancestor names to ignore when counting
+# public methods (see R0903)
+exclude-too-few-public-methods=
+
