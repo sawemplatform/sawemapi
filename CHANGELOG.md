@@ -10,6 +10,7 @@ contain breaking changes.
 First release.
 
 ### Added
+
 - `SAWEMApi` client with `get` and `post`, authenticating with a bearer token.
 - `ApiReturnType`: return the raw response, the text, the parsed envelope, the `data`
   field, or a pandas DataFrame (optional `pandas` extra).
@@ -27,3 +28,10 @@ First release.
   response. `ApiWarning` for warnings in the response envelope.
 - Configurable `timeout` (default 30 seconds) and TLS `verify` (`True`, `False` or a CA
   bundle path).
+
+## [0.1.1] - 2026-11-05
+
+### Fixed
+
+- Changed package author to sawemplatform@ntcsa.co.za
+- Release to PyPI
