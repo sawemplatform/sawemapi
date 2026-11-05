@@ -4,6 +4,10 @@ Releases are manual: CI runs the tests and lint, but does not version, build or 
 this package. A released version cannot be replaced on PyPI, so check each step before
 uploading.
 
+> [!NOTE]
+> This needs to be updated for a standalone Github repository. Except for the version
+> tagging the instructions still refer to the monorepo Gitlab configuration.
+
 ## 1. Prepare
 
 1. Choose the version number. Until 1.0.0, breaking changes bump the minor number.
@@ -30,8 +34,8 @@ responses only.
 Commit the version and changelog, merge to `main`, and tag the merge commit:
 
 ```
-git tag sawemapi-vX.Y.Z
-git push <remote> sawemapi-vX.Y.Z
+git tag vX.Y.Z
+git push <remote> vX.Y.Z
 ```
 
 Nothing in CI reads the tag; it records which commit was released.
