@@ -5,6 +5,20 @@ All notable changes to this project are documented here. The format follows
 [Semantic Versioning](https://semver.org/) from 1.0.0; until then, minor releases may
 contain breaking changes.
 
+## [0.1.2] - 2026-11-19
+
+### Changed
+
+- Added project links (homepage, repository, issues, changelog) to the package metadata so
+  they appear on PyPI.
+
+## [0.1.1] - 2026-11-05
+
+### Fixed
+
+- Changed package author to sawemplatform@ntcsa.co.za
+- Release to PyPI
+
 ## [0.1.0] - 2026-11-02
 
 First release.
@@ -28,17 +42,3 @@ First release.
   response. `ApiWarning` for warnings in the response envelope.
 - Configurable `timeout` (default 30 seconds) and TLS `verify` (`True`, `False` or a CA
   bundle path).
-
-## [0.1.1] - 2026-11-05
-
-### Fixed
-
-- Changed package author to sawemplatform@ntcsa.co.za
-- Release to PyPI
-
-## [0.1.2] - 2026-11-19
-
-### Changed
-
-- Added project links (homepage, repository, issues, changelog) to the package metadata so
-  they appear on PyPI.

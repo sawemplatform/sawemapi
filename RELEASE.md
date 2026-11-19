@@ -9,7 +9,8 @@ uploading.
 2. Set `__version__` in `src/sawemapi/_version.py`. This is the only place the version is
    kept; `pyproject.toml` reads it from there.
 3. In `CHANGELOG.md`, move the entries to a heading for the new version with today's date,
-   and start a fresh `Unreleased` section if there are further changes planned.
+   and start a fresh `Unreleased` section if there are further changes planned. The
+   changelog is newest first, so put the new version at the top, above the previous release.
 4. Update `ROADMAP.md` if the release delivers anything listed there.
 
 ## 2. Check
