@@ -35,3 +35,10 @@ First release.
 
 - Changed package author to sawemplatform@ntcsa.co.za
 - Release to PyPI
+
+## [0.1.2] - 2026-11-19
+
+### Changed
+
+- Added project links (homepage, repository, issues, changelog) to the package metadata so
+  they appear on PyPI.

@@ -20,6 +20,12 @@ classifiers=[
     "Operating System :: OS Independent",
 ]
 
+[project.urls]
+Homepage = "https://github.com/sawemplatform/sawemapi"
+Repository = "https://github.com/sawemplatform/sawemapi"
+Issues = "https://github.com/sawemplatform/sawemapi/issues"
+Changelog = "https://github.com/sawemplatform/sawemapi/blob/main/CHANGELOG.md"
+
 [project.optional-dependencies]
 pandas = ["pandas"]
 
